@@ -7,9 +7,13 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Run the Text File') {
+        
+        stage('Print File Content') {
             steps {
-                cat first file.txt
+                script {
+                    def fileContent = readFile 'first_file.txt'
+                    echo "Content of the file:\n${fileContent}"
+                }
             }
         }
     }
