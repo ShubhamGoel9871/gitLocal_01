@@ -11,7 +11,7 @@ pipeline {
         stage('Print File Content') {
             steps {
                 script {
-                    def fileContent = readFile 'first_file.txt'
+                    def fileContent = readFile 'first file.txt'
                     echo "Content of the file:\n${fileContent}"
                 }
             }
